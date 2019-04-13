@@ -48,7 +48,9 @@ headerImg.addEventListener('mouseout', () => {
 const headline = document.querySelector('.logo-heading');
 
 // #6
-headline.addEventListener('dblclick', () => {
+headline.addEventListener('click', (e) => {
+  e.stopPropagation();
+
   let headMarg = headline.style.margin;
 
   const editStyle = (copy, target) => {
@@ -111,3 +113,9 @@ document.body.addEventListener('wheel', ()=> {
 document.body.addEventListener('keydown', (e)=> {
   console.log(e.key);
 })
+
+const navCont = document.querySelector('.nav-container');
+navCont.addEventListener('click', ()=> {
+  navCont.style.color = 'gold';
+});
+
